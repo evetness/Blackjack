@@ -12,6 +12,8 @@ public class Jatekosok {
         this.name = name;
     }
 
+    public Jatekosok(){}
+
     public Jatekosok(String name) {
         this.name = name;
     }
