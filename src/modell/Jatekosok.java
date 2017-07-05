@@ -4,21 +4,20 @@ import java.util.Scanner;
 
 public class Jatekosok {
 
-    private String name;
+    private String neve;
 
-    Scanner input = new Scanner(System.in);
+    private Scanner input = new Scanner(System.in);
 
     public String getName() {
-        return name;
+        return neve;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setName(String neve) {
+        this.neve = neve;
     }
 
     public Jatekosok() {
-        System.out.println("Játékos neve:");
-        this.name = input.nextLine();
+        this.neve = input.nextLine();
     }
 
 }
