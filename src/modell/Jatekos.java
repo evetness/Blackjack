@@ -3,16 +3,16 @@ package modell;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Jatekosok {
+public class Jatekos {
 
     private String neve;
+    private Kartya kartya = new Kartya();
     private Scanner input = new Scanner(System.in);
-    private Kartyak kartyak = new Kartyak();
     private ArrayList<Integer> kartyai = new ArrayList<Integer>();
 
-    public Jatekosok() {
+    public Jatekos() {
         this.neve = input.nextLine();
-        this.kartyai.add(kartyak.generator());
+        this.kartyai.add(kartya.generator());
     }
 
     public ArrayList<Integer> getKartyai() {
@@ -20,15 +20,15 @@ public class Jatekosok {
     }
 
     public void setKartyai() {
-        this.kartyai.add(kartyak.generator());
+        this.kartyai.add(kartya.generator());
     }
 
     public String getName() {
         return neve;
     }
 
-    public void setName(String neve) {
-        this.neve = neve;
+    public void setName() {
+        this.neve = input.nextLine();
     }
 
 }

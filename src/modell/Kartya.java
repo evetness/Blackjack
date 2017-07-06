@@ -1,6 +1,6 @@
 package modell;
 
-public class Kartyak {
+public class Kartya {
 
     public Integer generator(){
 
