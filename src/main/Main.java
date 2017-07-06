@@ -52,7 +52,6 @@ public class Main {
         for (int i = 0; i <= jatekosokOsszesen.size() - 1; i++) {
 
             System.out.println(jatekosokOsszesen.get(i).getName() + " kártyái:" + jatekosokOsszesen.get(i).getKartyai() + ", összesen: " + jatekosokOsszesen.get(i).getKartyai().stream().mapToInt(Integer::intValue).sum());
-            jatekosokOsszesen.get(i).getKartyai().stream().mapToInt(Integer::intValue).sum();
 
         }
 
