@@ -13,8 +13,6 @@ public class Main {
         Szolgaltatasok szolgaltatasok = new Szolgaltatasok();
         ArrayList<Jatekos> jatekosokOsszesen = new ArrayList<>();
 
-//        int jatekosokSzama = szolgaltatasok.jatekosok();
-
         System.out.println("Játékosok száma?");
         int jatekosokSzama = input.nextInt();
 

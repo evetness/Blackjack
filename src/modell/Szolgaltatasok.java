@@ -14,9 +14,4 @@ public class Szolgaltatasok {
 
     }
 
-//    public Integer jatekosok(){
-//        System.out.println("Játékosok száma?");
-//        int jatekosokSzama = input.nextInt();
-//        return jatekosokSzama;
-//    }
 }
