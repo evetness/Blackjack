@@ -1,15 +1,21 @@
 package modell;
 
+import java.util.ArrayList;
+
 public class Kartya {
 
-    public Integer generator(){
+    private Szolgaltatasok szolgaltatasok = new Szolgaltatasok();
+    private ArrayList<Integer> kartyai = new ArrayList<Integer>();
 
-        int[] kartyak = {11,10,9,8,7,4,3,2};
-        int veletlen = (int) (Math.random() * kartyak.length);
-
-        Integer kartya = kartyak[veletlen];
-
-        return kartya;
+    public Kartya() {
+        this.kartyai.add(szolgaltatasok.kartyaGenerator());
     }
 
+    public ArrayList<Integer> getKartyai() {
+        return kartyai;
+    }
+
+    public void setKartyai() {
+        this.kartyai.add(szolgaltatasok.kartyaGenerator());
+    }
 }
