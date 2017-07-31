@@ -1,6 +1,8 @@
 package modell;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Kartya {
 
@@ -18,4 +20,5 @@ public class Kartya {
     public void setKartyai() {
         this.kartyai.add(szolgaltatasok.kartyaGenerator());
     }
+
 }

@@ -1,13 +1,16 @@
 package modell;
 
+import java.lang.reflect.Array;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Szolgaltatasok {
 
-    Scanner input = new Scanner(System.in);
-
     public String osztas(){
 
+        Scanner input = new Scanner(System.in);
         System.out.println("Kérsz még lapot?");
         String valasz = input.nextLine();
         return valasz;
@@ -22,6 +25,15 @@ public class Szolgaltatasok {
         Integer kartya = kartyak[veletlen];
 
         return kartya;
+    }
+
+    public Integer jatekosSzamlalo(){
+
+        Scanner input = new Scanner(System.in);
+        System.out.println("Játékosok száma?");
+        int jatekosokSzama = input.nextInt();
+        return jatekosokSzama;
+
     }
 
 }

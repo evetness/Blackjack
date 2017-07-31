@@ -4,6 +4,7 @@ import modell.Jatekos;
 import modell.Kartya;
 import modell.Szolgaltatasok;
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class Main {
 
@@ -14,13 +15,11 @@ public class Main {
         Map<String, ArrayList<Integer>> jatekosKartyaMap = new HashMap<>();
 
         //játékosok számának meghatározása
-        System.out.println("Játékosok száma?");
-        int jatekosokSzama = input.nextInt();
+        int jatekosokSzama = szolgaltatasok.jatekosSzamlalo();
 
-        //játékosok nevei
-        for (int k = 0; k <= jatekosokSzama - 1; k++) {
+        //játékosok nevei és első kártya
+        for (int k = 0; k < jatekosokSzama; k++) {
 
-            System.out.println("Játékos neve:");
             Jatekos jatekos = new Jatekos();
             Kartya kartya = new Kartya();
             jatekosKartyaMap.put(jatekos.getName(), kartya.getKartyai());
@@ -51,6 +50,5 @@ public class Main {
                 }
             }
         }
-
     }
 }

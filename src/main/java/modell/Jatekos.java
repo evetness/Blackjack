@@ -8,6 +8,7 @@ public class Jatekos {
     private Scanner input = new Scanner(System.in);
 
     public Jatekos() {
+        System.out.println("Játékos neve:");
         this.neve = input.nextLine();
     }
 
