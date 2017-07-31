@@ -2,3 +2,5 @@
 **/out
 **/*.iml
 **/target
+**/src/main/resources
+**/src/main/java/kezelo

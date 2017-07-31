@@ -12,6 +12,7 @@ public class Main {
 
         Scanner input = new Scanner(System.in);
         Szolgaltatasok szolgaltatasok = new Szolgaltatasok();
+        Map<String, Map<String, Integer>> kartyaMap = new HashMap<>();
         Map<String, ArrayList<Integer>> jatekosKartyaMap = new HashMap<>();
 
         //játékosok számának meghatározása
