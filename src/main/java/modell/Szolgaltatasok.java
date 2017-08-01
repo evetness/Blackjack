@@ -1,17 +1,32 @@
 package modell;
 
-import java.lang.reflect.Array;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Random;
 import java.util.Scanner;
 
+
 public class Szolgaltatasok {
+
+    public Integer tet(){
+
+        Scanner input = new Scanner(System.in);
+        System.out.println("Mennyi legyen az alap tét?\n[5] [10] [20] [50]");
+        Integer tet = input.nextInt();
+        switch (tet){
+            case 5: tet = 5;
+            case 10: tet = 10;
+            case 20: tet = 20;
+            case 50: tet = 50;
+            default: System.out.println("Az alapértékek közül válassz!");
+        }
+        return tet;
+
+    }
 
     public String osztas(){
 
         Scanner input = new Scanner(System.in);
-        System.out.println("Kérsz még lapot?");
+        System.out.println("Kersz meg lapot?");
         String valasz = input.nextLine();
         return valasz;
 
@@ -30,10 +45,26 @@ public class Szolgaltatasok {
     public Integer jatekosSzamlalo(){
 
         Scanner input = new Scanner(System.in);
-        System.out.println("Játékosok száma?");
+        System.out.println("Jatekosok szama?");
         int jatekosokSzama = input.nextInt();
         return jatekosokSzama;
 
+    }
+
+    public Map<Integer,String> kartyak(){
+
+        Map<Integer,String> kartyak = new HashMap<>();
+
+        kartyak.put(11,"Asz");
+        kartyak.put(10,"X");
+        kartyak.put(9,"IX");
+        kartyak.put(8,"VII");
+        kartyak.put(7,"VII");
+        kartyak.put(4,"Kiraly");
+        kartyak.put(3,"Felso");
+        kartyak.put(2,"Also");
+
+        return kartyak;
     }
 
 }

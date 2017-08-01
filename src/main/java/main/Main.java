@@ -3,17 +3,15 @@ package main;
 import modell.Jatekos;
 import modell.Kartya;
 import modell.Szolgaltatasok;
-import java.util.*;
-import java.util.stream.Collectors;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        Scanner input = new Scanner(System.in);
         Szolgaltatasok szolgaltatasok = new Szolgaltatasok();
-        Map<String, Map<String, Integer>> kartyaMap = new HashMap<>();
-        Map<String, ArrayList<Integer>> jatekosKartyaMap = new HashMap<>();
+        Map<Jatekos, Kartya> jatekosKartyaMap = new HashMap<>();
 
         //játékosok számának meghatározása
         int jatekosokSzama = szolgaltatasok.jatekosSzamlalo();
@@ -23,14 +21,22 @@ public class Main {
 
             Jatekos jatekos = new Jatekos();
             Kartya kartya = new Kartya();
-            jatekosKartyaMap.put(jatekos.getName(), kartya.getKartyai());
+            jatekosKartyaMap.put(jatekos, kartya);
 
         }
 
-        for (Map.Entry<String, ArrayList<Integer>> entry : jatekosKartyaMap.entrySet()) {
+        //alap tét megadása
+        int tet = szolgaltatasok.tet();
 
-            System.out.println(entry.getKey() + " játékos köre, kártyái: " + entry.getValue());
-            int osszeg = entry.getValue().stream().mapToInt(Integer::intValue).sum();
+        for (Map.Entry<Jatekos, Kartya> entry : jatekosKartyaMap.entrySet()) {
+
+            int osszeg = 0;
+            entry.getValue().setKartyai();
+            System.out.println(entry.getKey().getName() + " jatekos kore, kartyai: ");
+            for (int i=0; i < entry.getValue().getKartyai().size(); i++){
+                System.out.print(szolgaltatasok.kartyak().get(entry.getValue().getKartyai().get(i))+" ");
+            }
+            System.out.println();
 
             for (int j = 0; osszeg < 21; j++) {
 
@@ -38,18 +44,26 @@ public class Main {
 
                 if (valasz.equals("igen")) {
 
-                    entry.getValue().add(szolgaltatasok.kartyaGenerator());
-                    System.out.println("A kapott lap: " + entry.getValue().get(entry.getValue().size() - 1));
-                    osszeg = entry.getValue().stream().mapToInt(Integer::intValue).sum();
-                    System.out.println(entry.getKey() + " kártyái:" + entry.getValue() + ", összesen: " + osszeg);
+                    entry.getValue().setKartyai();
+                    System.out.println("A kapott lap: " + szolgaltatasok.kartyak().get(entry.getValue().getKartyai().get(entry.getValue().getKartyai().size()-1)));
+                    osszeg = entry.getValue().getKartyai().stream().mapToInt(Integer::intValue).sum();
+                    System.out.println(entry.getKey().getName() + " kartyai:");
+                    for (int i=0; i < entry.getValue().getKartyai().size(); i++){
+                        System.out.print(szolgaltatasok.kartyak().get(entry.getValue().getKartyai().get(i))+" ");
+                    }
+                    System.out.println();
 
                 } else {
-
-                    System.out.println(entry.getKey() + " kártyái:" + entry.getValue() + ", összesen: " + osszeg);
-                    break;
-
+                    if(valasz.equals("nem")){
+                        break;
+                    }else {
+                        System.out.println("\"igen\"-el vagy \"nem\"-el valaszolj!");
+                    }
                 }
             }
         }
+
+        jatekosKartyaMap.forEach((jatekos, kartya) -> System.out.println(jatekos.getName()+" kartyainak osszege: "+kartya.getKartyai().stream().mapToInt(Integer::intValue).sum()));
+
     }
 }
