@@ -12,13 +12,6 @@ public class Szolgaltatasok {
         Scanner input = new Scanner(System.in);
         System.out.println("Mennyi legyen az alap tét?\n[5] [10] [20] [50]");
         Integer tet = input.nextInt();
-        switch (tet){
-            case 5: tet = 5;
-            case 10: tet = 10;
-            case 20: tet = 20;
-            case 50: tet = 50;
-            default: System.out.println("Az alapértékek közül válassz!");
-        }
         return tet;
 
     }
