@@ -7,16 +7,22 @@ import java.util.Scanner;
 
 public class Szolgaltatasok {
 
-    public Integer tet(){
+    public Integer tet() {
 
         Scanner input = new Scanner(System.in);
-        System.out.println("Mennyi legyen az alap tét?\n[5] [10] [20] [50]");
-        Integer tet = input.nextInt();
-        return tet;
+        for (;;) {
+            System.out.println("Mennyi legyen az alap tét?\n[5] [10] [20] [50]");
+            Integer tet = input.nextInt();
+            if (tet.equals(5) || tet.equals(10) || tet.equals(20) || tet.equals(50)) {
+                return tet;
+            } else {
+                System.out.println("Az alapértékek közül válassz!");
+            }
+        }
 
     }
 
-    public String osztas(){
+    public String osztas() {
 
         Scanner input = new Scanner(System.in);
         System.out.println("Kersz meg lapot?");
@@ -25,9 +31,9 @@ public class Szolgaltatasok {
 
     }
 
-    public Integer kartyaGenerator(){
+    public Integer kartyaGenerator() {
 
-        int[] kartyak = {11,10,9,8,7,4,3,2};
+        int[] kartyak = {11, 10, 9, 8, 7, 4, 3, 2};
         int veletlen = (int) (Math.random() * kartyak.length);
 
         Integer kartya = kartyak[veletlen];
@@ -35,7 +41,7 @@ public class Szolgaltatasok {
         return kartya;
     }
 
-    public Integer jatekosSzamlalo(){
+    public Integer jatekosSzamlalo() {
 
         Scanner input = new Scanner(System.in);
         System.out.println("Jatekosok szama?");
@@ -44,18 +50,18 @@ public class Szolgaltatasok {
 
     }
 
-    public Map<Integer,String> kartyak(){
+    public Map<Integer, String> kartyak() {
 
-        Map<Integer,String> kartyak = new HashMap<>();
+        Map<Integer, String> kartyak = new HashMap<>();
 
-        kartyak.put(11,"Asz");
-        kartyak.put(10,"X");
-        kartyak.put(9,"IX");
-        kartyak.put(8,"VII");
-        kartyak.put(7,"VII");
-        kartyak.put(4,"Kiraly");
-        kartyak.put(3,"Felso");
-        kartyak.put(2,"Also");
+        kartyak.put(11, "Asz");
+        kartyak.put(10, "X");
+        kartyak.put(9, "IX");
+        kartyak.put(8, "VIII");
+        kartyak.put(7, "VII");
+        kartyak.put(4, "Kiraly");
+        kartyak.put(3, "Felso");
+        kartyak.put(2, "Also");
 
         return kartyak;
     }

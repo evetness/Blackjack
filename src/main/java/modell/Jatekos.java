@@ -18,7 +18,7 @@ public class Jatekos {
         return penz;
     }
 
-        public void setPenz(Integer penz) {
+    public void setPenz(Integer penz) {
         this.penz = penz;
     }
 
